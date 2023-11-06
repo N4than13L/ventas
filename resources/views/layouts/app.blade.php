@@ -58,6 +58,9 @@
                                 </li>
                             @endif
                         @else
+                            <a class="nav-link" href="{{ route('supplier.index') }}">
+                                {{ __('Suplidores') }}
+                            </a>
                             <a class="nav-link" href="{{ route('account.index') }}">
                                 {{ __('Cuentas') }}
                             </a>

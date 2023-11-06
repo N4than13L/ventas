@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\SupplierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +47,16 @@ Route::get('/account/edit/{id}', [AccountController::class, 'edit'])->name('acco
 Route::post('/account/update/{id}', [AccountController::class, 'update'])->name('account.update');
 
 Route::get('/account/delete/{id}', [AccountController::class, 'delete'])->name('account.delete');
+
+// suplidores.
+Route::get('/supplier/index', [SupplierController::class, 'index'])->name('supplier.index');
+
+Route::get('/supplier/add', [SupplierController::class, 'add'])->name('supplier.add');
+
+Route::post('/supplier/save', [SupplierController::class, 'save'])->name('supplier.save');
+
+Route::get('/supplier/edit/{id}', [SupplierController::class, 'edit'])->name('supplier.edit');
+
+Route::post('/supplier/update/{id}', [SupplierController::class, 'update'])->name('supplier.update');
+
+Route::get('/supplier/delete/{id}', [SupplierController::class, 'delete'])->name('supplier.delete');
