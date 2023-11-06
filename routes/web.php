@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,3 +61,16 @@ Route::get('/supplier/edit/{id}', [SupplierController::class, 'edit'])->name('su
 Route::post('/supplier/update/{id}', [SupplierController::class, 'update'])->name('supplier.update');
 
 Route::get('/supplier/delete/{id}', [SupplierController::class, 'delete'])->name('supplier.delete');
+
+// productos.
+Route::get('/product/index', [ProductController::class, 'index'])->name('product.index');
+
+Route::get('/product/add', [ProductController::class, 'add'])->name('product.add');
+
+Route::post('/product/save', [ProductController::class, 'save'])->name('product.save');
+
+Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+
+Route::post('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
+
+Route::get('/product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');

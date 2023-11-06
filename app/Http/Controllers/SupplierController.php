@@ -22,7 +22,10 @@ class SupplierController extends Controller
 
     public function add()
     {
-        return view('suppliers.add');
+        $user = Auth::user();
+        return view('suppliers.add', [
+            'user' => $user
+        ]);
     }
 
     public function save(Request $request)
