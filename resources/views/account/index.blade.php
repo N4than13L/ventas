@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
+                <div class="card shadow">
                     <div class="card-header">
                         <h3 class="text-center">Agregar la cuenta</h3>
                         <a class="btn btn-success" href="{{ route('account.add') }}"><i class="fa-solid fa-plus"></i></a>

@@ -8,27 +8,27 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Inventarios Introvertidos</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-
+    {{-- font awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/app.css'])
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light shadow" id="nav-color">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand" href="{{ url('/home') }}">
+                    Inventarios Introvertidos
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -58,15 +58,23 @@
                                 </li>
                             @endif
                         @else
+                            <a class="nav-link" href="{{ route('client.index') }}">
+                                <i class="fa-solid fa-user-plus"></i>
+                                {{ __('Clientes') }}
+                            </a>
+
                             <a class="nav-link" href="{{ route('product.index') }}">
+                                <i class="fa-solid fa-paper-plane"></i>
                                 {{ __('Productos') }}
                             </a>
 
                             <a class="nav-link" href="{{ route('supplier.index') }}">
+                                <i class="fa-solid fa-truck-field"></i>
                                 {{ __('Suplidores') }}
                             </a>
 
                             <a class="nav-link" href="{{ route('account.index') }}">
+                                <i class="fa-solid fa-file-invoice"></i>
                                 {{ __('Cuentas') }}
                             </a>
 
@@ -74,17 +82,20 @@
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fa-solid fa-circle-user"></i>
                                     {{ Auth::user()->name . ' ' . Auth::user()->surname }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('settings') }}">
+                                        <i class="fa-solid fa-gear"></i>
                                         {{ __('settings') }}
                                     </a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
+                                        <i class="fa-solid fa-right-from-bracket"></i>
                                         {{ __('Logout') }}
                                     </a>
 

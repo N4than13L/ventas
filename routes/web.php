@@ -7,6 +7,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ClientController;
+use App\Models\Client;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,3 +76,16 @@ Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('prod
 Route::post('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
 
 Route::get('/product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
+
+// cliente.
+Route::get('/client/index/', [ClientController::class, 'index'])->name('client.index');
+
+Route::get('/client/add/', [ClientController::class, 'add'])->name('client.add');
+
+Route::post('/client/save', [ClientController::class, 'save'])->name('client.save');
+
+Route::get('/client/edit/{id}', [ClientController::class, 'edit'])->name('client.edit');
+
+Route::post('/client/update/{id}', [ClientController::class, 'update'])->name('client.update');
+
+Route::get('/client/delete/{id}', [ClientController::class, 'delete'])->name('client.delete');
