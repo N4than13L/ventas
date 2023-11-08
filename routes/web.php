@@ -8,7 +8,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ClientController;
-use App\Models\Client;
+use App\Http\Controllers\BillController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,3 +89,11 @@ Route::get('/client/edit/{id}', [ClientController::class, 'edit'])->name('client
 Route::post('/client/update/{id}', [ClientController::class, 'update'])->name('client.update');
 
 Route::get('/client/delete/{id}', [ClientController::class, 'delete'])->name('client.delete');
+
+
+// factura.
+Route::get('/bill/index', [BillController::class, 'index'])->name('bill.index');
+
+Route::get('/bill/add', [BillController::class, 'add'])->name('bill.add');
+
+Route::post('/bill/save', [BillController::class, 'save'])->name('bill.save');

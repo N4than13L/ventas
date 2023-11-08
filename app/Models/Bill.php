@@ -20,9 +20,7 @@ class Bill extends Model
         'attendedby',
         'volume',
         'users_id',
-        'account_id',
         'clients_id',
-        'products_id',
         'created_at',
         'updated_at'
     ];
@@ -43,11 +41,5 @@ class Bill extends Model
     public function products()
     {
         return $this->belongsTo(Product::class, 'products_id');
-    }
-
-    // relacion de muchos a uno.
-    public function account()
-    {
-        return $this->belongsTo(Account::class, 'account_id');
     }
 }

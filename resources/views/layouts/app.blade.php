@@ -58,6 +58,10 @@
                                 </li>
                             @endif
                         @else
+                            <a class="nav-link" href="{{ route('bill.index') }}">
+                                <i class="fa-solid fa-file-invoice"></i>
+                                {{ __('Facturas') }}
+                            </a>
                             <a class="nav-link" href="{{ route('client.index') }}">
                                 <i class="fa-solid fa-user-plus"></i>
                                 {{ __('Clientes') }}
