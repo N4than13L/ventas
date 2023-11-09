@@ -44,12 +44,12 @@
                                         <td scope="row">{{ $bills->clients->products->color }}</td>
 
                                         <td scope="row">
-                                            <a href="{{ route('supplier.edit', ['id' => $bills->id]) }}"
+                                            <a href="{{ route('bill.edit', ['id' => $bills->id]) }}"
                                                 class="btn btn-warning btn-sm">
                                                 <i class="fas fa-edit"></i>
                                             </a>
                                             &nbsp;
-                                            <a href="{{ route('supplier.delete', ['id' => $bills->id]) }}"
+                                            <a href="{{ route('bill.delete', ['id' => $bills->id]) }}"
                                                 class="btn btn-danger btn-sm">
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>

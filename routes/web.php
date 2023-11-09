@@ -97,3 +97,9 @@ Route::get('/bill/index', [BillController::class, 'index'])->name('bill.index');
 Route::get('/bill/add', [BillController::class, 'add'])->name('bill.add');
 
 Route::post('/bill/save', [BillController::class, 'save'])->name('bill.save');
+
+Route::get('/bill/edit/{id}', [BillController::class, 'edit'])->name('bill.edit');
+
+Route::post('/bill/update/{id}', [BillController::class, 'update'])->name('bill.update');
+
+Route::get('/bill/delete/{id}', [BillController::class, 'delete'])->name('bill.delete');
